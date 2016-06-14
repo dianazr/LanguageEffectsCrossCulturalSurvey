@@ -13,7 +13,7 @@ d<-read.csv("r123export2.csv", header=T,sep = ",")
 
 table(d$lang.r2)
 
-d$lang.r2 <- revalue(d$lang.r2, c("Papiamento: spoken on Curaçao"="Papiamento", 
+d$lang.r2 <- revalue(d$lang.r2, c("Papiamento: spoken on CuraÃ§ao"="Papiamento", 
                                   "Papiamento: spoken on Aruba"="Papiamento"))
 table(d$lang.r2)
 
@@ -168,50 +168,6 @@ abline(lm(satO~satD), col="red", lwd=1.5) # regression line (y~x)
 abline(0,1, col="darkgreen",lwd=1.5) # regression line (y~x) 
 detach(raw2)
 
-# pairs(~satD+satO+c.satD+c.satO,data=rawvars,)
-# 
-# install.packages("GGally")
-# install.packages("ggplot2")
-# library(GGally)
-# ggpairs(rawvars)
-# # data(flea)
-# # 
-# 
-# rawvars$typ<-rep("satD",1000)
-# 
-# raw<-data.frame(cbind(rbind(cbind(satD,rep("Dutch",1000)),
-#            cbind(satO,rep("Other",1000))),
-#            rbind(cbind(c.satD,rep("Dutch",1000)),
-#            cbind(c.satO,rep("Other",1000)))))
-# 
-# 
-# Nm<- c("sat","lang1","change","lang2")
-# colnames(raw) <- Nm
-# 
-# raw<- raw[,-2]
-# 
-# 
-# 
-# raw$sat<-as.numeric(levels(raw$sat))[raw$sat]
-# raw$change<-as.numeric(levels(raw$change))[raw$change]
-# 
-# ggscatmat(raw, columns = 1:2, color="lang2")
-# 
-# ggscatmat(rawvars, columns = 1:4, alpha=0.8)
-# 
-# 
-# #### Second option
-# a <- matrix(c(1, -.543, .99, -.689, 
-#               -.543, 1, -.644, .99,
-#               .99,-.644,1,-.543,
-#               -.689, .99, -.543, 1),4,4)
-# stdevs <- c(sd(satD), sd(c.satD), sd(satO),sd(c.satO))
-# #stdevs is the vector that contains the standard deviations of your variables
-# b <- stdevs %*% t(stdevs)  
-# # b is an n*n matrix whose generic term is stdev[i]*stdev[j] (n is your number of variables)
-# Sigma1 <- b * a  #
-# 
-# raw1 <- mvrnorm(n=1000, mu=mu, Sigma=a,empirical=T)
 
 mu1 <- c(5.645,5.645,5.831,5.831)
 mu2 <- c(4.645,5.645,4.831,5.831)
